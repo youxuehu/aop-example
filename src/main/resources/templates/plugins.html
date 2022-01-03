@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        function active(checkbox, id) {
+           if (checkbox.checked == true) {
+                $.get("/plugins/active?id=" + id, function(data,status){
+                    alert(data);
+                });
+           } else {
+                $.get("/plugins/disabled?id=" + id, function(data,status){
+                    alert(data);
+                });
+           }
+        }
+    </script>
+</head>
+<body>
+<table border="1" class="table table-hover table-condensed">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>名称</td>
+        <td>类名</td>
+        <td>jar</td>
+        <td>是否启用</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="config : ${list}">
+        <td th:text="${config.id}"></td>
+        <td th:text="${config.name}"></td>
+        <td th:text="${config.className}"></td>
+        <td th:text="${config.jarRemoteUrl}"></td>
+        <td><input type="checkbox" onchange="active(this, 1)" th:attr="checked=(${config.active} == true ? true: false)" /></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

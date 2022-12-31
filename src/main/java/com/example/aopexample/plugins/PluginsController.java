@@ -28,7 +28,7 @@ public class PluginsController {
     SpringAopPluginsService springAopPluginsService;
 
     /**
-     * http://localhost:8080/plugins/list
+     * http://localhost/plugins/list
      * @param request
      * @param response
      * @return
@@ -41,7 +41,7 @@ public class PluginsController {
     }
 
     /**
-     * http://localhost:8080/plugins/active
+     * http://localhost/plugins/active
      * @param request
      * @param response
      * @param id
@@ -55,7 +55,7 @@ public class PluginsController {
     }
 
     /**
-     * http://localhost:8080/plugins/disabled
+     * http://localhost/plugins/disabled
      * @param request
      * @param response
      * @param id
@@ -69,7 +69,7 @@ public class PluginsController {
     }
 
     /**
-     * http://localhost:8080/plugins/loader
+     * http://localhost/plugins/loader
      * @param request
      * @param response
      * @return
@@ -82,7 +82,7 @@ public class PluginsController {
     }
 
     /**
-     * http://localhost:8080/plugins/config
+     * http://localhost/plugins/config
      * @param request
      * @param response
      * @return
